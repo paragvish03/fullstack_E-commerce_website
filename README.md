@@ -14,3 +14,5 @@ key features.
 -Template enjine provide base for every product cards
 -Can add as many as number of product
 -Token has generate which set header and provide authorisation avoid login everytime
+
+note- ui and frontend part is basic and purpose to demonstrate backend logic only 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fetch using MySQL and Node.js</title>
+</head>
+<style>
+    body {
+        display: flex;
+        font-size: 3vmin;
+    }
+
+    .table-data {
+        display: flex;
+        width: 50vw;
+
+        flex-wrap: wrap;
+        color: aliceblue;
+        font-size: 30px;
+        height: 100%;
+        background-color: rgb(67, 61, 64);
+        text-align: center;
+        padding-left: 20px;
+
+
+
+    }
+
+    a {
+        text-decoration: none;
+        color: orange;
+        border: 2px solid rgba(178, 39, 213, 0.998);
+
+    }
+
+    .container {
+        border: 1px solid rgb(183, 176, 176);
+        width: auto;
+        height: 100vh;
+
+    }
+
+    .card {
+        border: 2px solid white;
+        padding-top: 4px;
+        margin-bottom: 13px;
+        width: 20vw;
+        height: 26vw;
+
+
+
+    }
+
+    .content-box {
+        font-size: 3vmin;
+        border: 1px solid white;
+
+    }
+
+    img {
+        width: 70%;
+
+    }
+
+    .img {
+        overflow: hidden;
+    }
+
+    .filter {
+        height: 60vh;
+        width: 20vw;
+        border: 2px solid red;
+    }
+</style>
+
+<body>
+
+    <div class="filter">
+        <a href="/product/smartphone">Smartphone</a><br>
+        <a href="/product/laptop">Laptop</a><br>
+        <a href="/product/watch">Watch</a><br>
+        <a href="/product/earphone">Earphone</a><br>
+
+    </div>
+    <div class="table-data">
+        <% if(userData.length!=0){ var i=1; userData.forEach(function(result){ %>
+            <div class="card">
+                <div class="img">
+                    <img src=<%=result.url %> alt="">
+                </div>
+                <div class="content-box">
+                    <%=i; %>
+                </div class="content-box">
+                <div class="content-box">
+                    <%=result.name %>
+                </div class="content-box">
+                <div class="content-box">
+                    <%=result.price %>
+                </div class="content-box">
+                <div class="content-box">
+                    <%=result.description %>
+                </div class="content-box">
+
+
+                <div class="content-box"><a href="/users/delete/<%=result.id%>">Add to cart</a></div
+                    class="content-box">
+            </div>
+
+
+            <% i++; }) %>
+                <% } else{ %>
+
+                    <h4>No Data Found</h4>
+
+                    <% } %>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/admin.css">
+ 
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="/"><h3>Gadget World</h1> </a>
+    <a href="#home" class="active">modify product</a>
+    <a href="#news">remove product</a>
+    <a href="#contact">Add category</a>
+  </div>
+
+  
+  <h2 style="margin-left: 14px; color: red;">Admin access only</h2>
+  <p style="margin-left: 14px;">admin edition .</p>
+
+
+  <div class="container">
+
+
+    <form action="/add/product" method="post">
+     <input type="text" name="name" placeholder="product name" required>
+
+     <h4>Image url</h4>
+     <textarea type="text" name="url" placeholder="Url image" rows=4>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxt_PlpLYLIixaf6eUu5r5i6IWkHkwyihK3CIA1NdMIQIIaiFwl8hq5aXWG73n-PG_7n0&usqp=CAU</textarea>
+<h4>Cost</h4>
+     <input type="number" name="price" placeholder="product price" required><br>
+     <h3>about items</h3>
+     <textarea type="text" name="about" placeholder="comment...." rows=4 ></textarea>
+     <div class="category">
+      <h3>Category</h3>
+      <input type="radio" id="html" name="CategoryId" value="1">
+     <label for="html">watch</label><br>
+     <input type="radio" id="html" name="CategoryId" value="2">
+     <label for="html">Smartphone</label><br>
+     <input type="radio" id="html" name="CategoryId" value="3">
+     <label for="html">Laptop</label><br>
+     <input type="radio" id="html" name="CategoryId" value="4">
+     <label for="html">Earphones</label><br>
+    </div>
+     <textarea type="text" name="description" placeholder="comment...." rows=4 ></textarea>,<br>
+
+     <button type="submit" onclick="sure()">Confirm</button>
+  </form>
+  </div>
+
+</body>
+<script>
+function sure(){
+  alert(" item added")
+}
+</script>
+
+</html>

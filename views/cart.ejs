@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img,
+    div {
+      display: inline-block;
+    }
+
+    .container {
+      margin: 40px 0px 0px 0px;
+      background-color: rgba(255, 255, 255, 0.911);
+      padding: 10px 10px 30px 10px;
+      border-radius: 12px;
+      border: .5px solid grey;
+      font-weight: 600;
+
+    }
+
+    div {
+      padding: 0px 15px 0px 15px;
+    }
+
+    .name {
+      width: 100px;
+    }
+
+    .name1 {
+      width: 140px;
+      font-weight: bolder;
+      font-size: large;
+      color: indigo;
+    }
+
+    body {
+
+      background-image: url('https://clipart.world/wp-content/uploads/2021/07/Shopping-clipart-for-free.png');
+      background-size: cover;
+      width: 30vw;
+      margin: auto
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Cart items</h1>
+
+    <% if(cartitems && totalsum) { %>
+      <hr>
+      <% for(let i=0; i<cartitems.length; i++){ %>
+        <img src='<%= cartitems[i].dataValues.url%>' style="width: 10%; display:inline-block ">
+        <div class="name">
+          <%= cartitems[i].dataValues.name%>
+        </div>
+        <div class="name">₹<%= cartitems[i].dataValues.price%>
+        </div> <button> <a href="/user/cart/details/<%= cartitems[i].dataValues.id%>">remove</a></button>
+
+        <hr>
+
+        <% } %>
+          <% }else{ %>
+            <h2> cart is empty </h2>
+            <% } %>
+
+              <div class="name1">Total amount
+              </div>
+              <div class="name1">₹<%= totalsum%>
+              </div>
+
+  </div>
+</body>
+
+</html>

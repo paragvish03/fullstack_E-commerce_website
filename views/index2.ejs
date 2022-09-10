@@ -1,0 +1,96 @@
+<%- include('header');%>
+
+
+
+    <div class="row" style="height: 100vh;">
+        <div class="left" style="background-color:rgba(161, 161, 161, 0.762);">
+           
+
+            <ul id="myMenu" style="position:fixed;">
+                <h2>Category</h2>
+                <li> <a href="/product/smartphone">Smartphone</a>
+              </li>
+                <li> <a href="/product/laptop">Laptop</a></li>
+                <li> <a href="/product/watch">Watch</a></li>
+                <li> <a href="/product/earphone">Earphone</a></li>
+              
+             
+            
+  <script src="/js/main.js"></script>                
+                  
+               
+                    
+            </ul>
+           
+        </div>
+
+        <div class="right" style="background-color:#ddd;">
+            
+                <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative">
+
+                    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+                        <% if(userData.length!=0){ var i=1; userData.forEach(function(result){ %>
+                            <div class="col hp" style="margin-bottom: 20px; flex-grow: 0;">
+                                <div class="card h-100 shadow-sm">
+                                    <a href='/product/<%=result.id %>'>
+                                        <img src=<%=result.url %> class="card-img-top" alt="product.title" />
+                                    </a>
+
+                                    <div class="label-top shadow-sm">
+                                        <a class="text-white" href="#">
+                                            <%=result.name %>
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="clearfix mb-3">
+                                            <span class="float-start badge rounded-pill bg-success"> ₹<%=result.price %>
+                                            </span>
+
+                                            <span class="float-end"><a href="#"
+                                                    class="small text-muted text-uppercase aff-link"> </a>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span></span>
+                                        </div>
+                                        <h5 class="card-title">
+                                            <a target="_blank" href="#">
+                                                <%=result.description %>    
+                                            </a>
+                                        </h5>
+
+                                        <div class="d-grid gap-2 my-4">
+
+                                            <a href='/cart/add/product/<%=result.id %>' class="btn btn-warning bold-btn">add to cart</a>
+
+                                        </div>
+                                        <div class="clearfix mb-1">
+
+                                            <span class="float-start"><a href="#"><i
+                                                        class="fas fa-question-circle"></i></a></span>
+
+                                            <span class="float-end">
+                                                <i class="far fa-heart" style="cursor: pointer"></i>
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% i++; }) %>
+                                <% } else{ %>
+
+                                    <h4>No Data Found</h4>
+
+                                    <% } %>
+                    </div>
+
+                </div> 
+
+            </div>
+        
+    </div>
+
+

@@ -1,5 +1,6 @@
 # fullstack_E-commerce_website
 vide0 explanation: https://www.loom.com/share/f7f9fe6834454160a8a1500e9ef46fe1
+
 This project is based on nodejs and title of this project is Ecommerce website as ecommerce provide basic functionality like purchasing product online etc.
 Sequelize orm is used for query between server and database.
 Express framework is use for Api creation.
